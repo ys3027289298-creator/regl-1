@@ -1,0 +1,41 @@
+{
+  "width": 480,
+  "height": 360,
+  "segments": [
+    {
+      "name": "linear",
+      "type": "linear",
+      "edge": "clamp",
+      "startFrame": 0,
+      "frameCount": 48
+    },
+    {
+      "name": "catmull-clamp",
+      "type": "catmull-rom",
+      "edge": "clamp",
+      "startFrame": 48,
+      "frameCount": 48
+    },
+    {
+      "name": "catmull-mirror",
+      "type": "catmull-rom",
+      "edge": "mirror",
+      "startFrame": 96,
+      "frameCount": 48
+    },
+    {
+      "name": "b-spline-mirror",
+      "type": "uniform-cubic",
+      "edge": "mirror",
+      "startFrame": 144,
+      "frameCount": 48
+    },
+    {
+      "name": "b-spline-repeat",
+      "type": "uniform-cubic",
+      "edge": "repeat",
+      "startFrame": 192,
+      "frameCount": 48
+    }
+  ]
+}

@@ -3,6 +3,7 @@ if (process.env['GITHUB_ACTIONS'] === 'true') Error.stackTraceLimit = 0
 
 require('./destroy-bound-buffer')
 require('./flatten')
+require('./spline')
 require('./context-loss')
 require('./constructor')
 require('./projection')

@@ -1,0 +1,5 @@
+file '/home/ys/feedback/uidreczz28ZD9RzxJXJ/output/segments/linear.mp4'
+file '/home/ys/feedback/uidreczz28ZD9RzxJXJ/output/segments/catmull-clamp.mp4'
+file '/home/ys/feedback/uidreczz28ZD9RzxJXJ/output/segments/catmull-mirror.mp4'
+file '/home/ys/feedback/uidreczz28ZD9RzxJXJ/output/segments/b-spline-mirror.mp4'
+file '/home/ys/feedback/uidreczz28ZD9RzxJXJ/output/segments/b-spline-repeat.mp4'
