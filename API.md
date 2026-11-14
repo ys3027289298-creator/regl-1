@@ -1851,6 +1851,7 @@ A data source from an image can be one of the following types:
 | `data`             | Image data for the texture                                                                                                                                       | `null`                                                                        |         |
 | `copy`             |                                                                                                                                                                  | Copy the pixels in the current frame buffer. Cannot be used with `data` prop. | `false` |
 | `channels`         | Number of channels for the texture format                                                                                                                        | `null`                                                                        |         |
+| `decode`           | Decode `data` as an encoded image file (see below)                                                                                                               | `null`                                                                        |         |
 
 -   `mipmap`. If `boolean`, then it sets whether or not we should regenerate the mipmaps. If a `string`, it allows you to specify a hint to the mipmap generator. It can be one of the hints below
 
@@ -1964,6 +1965,26 @@ So it can be used as an alternative to `format`.
 | `'browser'` | `gl.BROWSER_DEFAULT_WEBGL` |
 
 -   `alignment` sets the pixel unpack alignment and must be one of `[1, 2, 4, 8]`
+
+-   `decode` tells regl to treat `data` as an encoded image file instead of raw pixels.  Currently the only supported value is `'avif'`.  `data` must be a `Uint8Array` or `ArrayBuffer` holding the encoded file; it is decoded synchronously to RGBA `uint8` pixels and uploaded, so `width`, `height` and `channels` are inferred from the image.  The encoded bytes are streamed directly from the caller's buffer — regl never makes an extra copy of the file.  In Node.js, decoding uses the `ffmpeg`/`ffprobe` binaries found on `PATH` (override with the `REGL_AVIF_FFMPEG`/`REGL_AVIF_FFPROBE` environment variables).  Example:
+
+```javascript
+const texture = regl.texture({
+  data: new Uint8Array(avifFileBytes),
+  decode: 'avif'
+})
+```
+
+If decoding fails, regl throws a `TextureDecodeError` (a subclass of `Error`) whose `code` property identifies the failure, instead of a generic validation error:
+
+| Code                            | Meaning                                             |
+| ------------------------------- | --------------------------------------------------- |
+| `ERR_TEXTURE_DECODE_FORMAT`     | unknown/unsupported `decode` format                 |
+| `ERR_TEXTURE_DECODE_DATA`       | `data` is not valid encoded image data              |
+| `ERR_TEXTURE_DECODE_UNSUPPORTED`| no decoder backend available in this environment    |
+| `ERR_TEXTURE_DECODE_FAILED`     | the decoder ran but failed (message has details)    |
+
+When construction fails, any texture objects and buffers already allocated for the texture are released before the error is propagated.
 
 **Relevant WebGL APIs**
 

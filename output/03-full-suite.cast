@@ -1,0 +1,4 @@
+{"version":3,"term":{"cols":80,"rows":24},"timestamp":1794624790,"command":"bash -c 'echo \"=== [3/4] full suite: npm test ===\"; npm test 2>&1 | tail -6'","title":"AVIF 3/4: full repo test suite (npm test)","env":{"SHELL":"/bin/bash"}}
+[0.006, "o", "=== [3/4] full suite: npm test ===\r\n"]
+[24.068, "o", "    at /home/ys/feedback/uidreczz28ZD9QRYwny/test/missing-shader.js:28:5\r\n    at Test.throws (/home/ys/feedback/uidreczz28ZD9QRYwny/node_modules/tape/lib/test.js:497:9)\r\n    at Test.bound [as throws] (/home/ys/feedback/uidreczz28ZD9QRYwny/node_modules/tape/lib/test.js:80:32)\r\n    at Test.<anonymous> (/home/ys/feedback/uidreczz28ZD9QRYwny/test/missing-shader.js:27:5)\r\n\r\n39503 tests complete (23s)\r\n"]
+[0.001, "x", "0"]

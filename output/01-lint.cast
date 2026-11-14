@@ -1,0 +1,4 @@
+{"version":3,"term":{"cols":80,"rows":24},"timestamp":1794624778,"command":"bash -c 'echo \"=== [1/4] lint: standard | snazzy ===\"; node_modules/.bin/standard | node_modules/.bin/snazzy && echo LINT_OK'","title":"AVIF 1/4: lint (standard)","env":{"SHELL":"/bin/bash"}}
+[0.006, "o", "=== [1/4] lint: standard | snazzy ===\r\n"]
+[0.958, "o", "LINT_OK\r\n"]
+[0.001, "x", "0"]

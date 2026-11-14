@@ -1252,6 +1252,16 @@ declare namespace REGL {
     data?: REGL.TextureImageData | null;
     /* Create texture by copying the pixels in the current frame buffer. Default: false */
     copy?: boolean;
+    /**
+     * Decode `data` as an encoded image file before uploading.
+     * Currently only `'avif'` is supported; `data` must be a
+     * `Uint8Array`/`ArrayBuffer` holding the encoded file, which is
+     * decoded synchronously to RGBA `uint8` pixels (dimensions are
+     * inferred from the image). Decode failures throw a
+     * `TextureDecodeError` carrying a stable `code`.
+     * Default: null
+     */
+    decode?: REGL.TextureDecodeFormat | null;
 
     /* Sets magnification filter. Default: 'nearest' */
     mag?: REGL.TextureMagFilterType;
@@ -1307,6 +1317,10 @@ declare namespace REGL {
     HTMLVideoElement |
     HTMLCanvasElement |
     CanvasRenderingContext2D;
+
+  /* Encoded image formats accepted by the texture `decode` option. */
+  type TextureDecodeFormat =
+    "avif";
 
   /**
    * An N-dimensional array, as per `scijs/ndarray`.

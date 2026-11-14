@@ -1,5 +1,9 @@
 # Release notes
 
+## Unreleased
+
+* Add AVIF texture decoding: pass encoded file bytes together with `decode: 'avif'` to `regl.texture`/`regl.cube`/`subimage` and regl decodes them to RGBA pixels at upload time. Decode failures raise a distinguishable `TextureDecodeError` with a stable `code`, and failed constructions release any textures/buffers already allocated. Existing pixel data paths are unchanged.
+
 ## 2.1.1
 
 * A small maintenance release that removes dist files from source control ([#676](https://github.com/regl-project/regl/pull/676)), upgrades headless-gl for dev ([#675](https://github.com/regl-project/regl/pull/675)), and adds missing TypeScript declarations ([#674](https://github.com/regl-project/regl/pull/674)). It should contain no changes to runtime execution.

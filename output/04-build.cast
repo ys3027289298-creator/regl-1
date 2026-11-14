@@ -1,0 +1,6 @@
+{"version":3,"term":{"cols":80,"rows":24},"timestamp":1794624821,"command":"bash -c 'echo \"=== [4/4] build: rollup checked + unchecked/min ===\"; npm run build-script 2>&1 | tail -2 && npm run build-min 2>&1 | tail -2 && echo BUILD_OK'","title":"AVIF 4/4: bundle builds (checked + min)","env":{"SHELL":"/bin/bash"}}
+[0.005, "o", "=== [4/4] build: rollup checked + unchecked/min ===\r\n"]
+[0.983, "o", "Unexpected token (2:10)\r\nUnexpected token (2:10)\r\n"]
+[3.060, "o", "0 error(s), 11 warning(s)\r\n\r\n"]
+[0.000, "o", "BUILD_OK\r\n"]
+[0.001, "x", "0"]
